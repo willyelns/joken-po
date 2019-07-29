@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:jokenpo/widgets/joken-po-button.dart';
 
 class GamePage extends StatefulWidget {
   final String title;
@@ -104,17 +105,18 @@ class _GamePageState extends State<GamePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                GestureDetector(
-                  onTap: () => _selectedOption(JokenOptions.rock),
-                  child: Image.asset('assets/images/rock.png', height: 100),
+                JokenPoButton(
+                  imagePath: 'assets/images/rock.png',
+                  callbackFunction: () => _selectedOption(JokenOptions.rock),
                 ),
-                GestureDetector(
-                  onTap: () => _selectedOption(JokenOptions.paper),
-                  child: Image.asset('assets/images/paper.png', height: 100),
+                JokenPoButton(
+                  imagePath: 'assets/images/paper.png',
+                  callbackFunction: () => _selectedOption(JokenOptions.paper),
                 ),
-                GestureDetector(
-                  onTap: () => _selectedOption(JokenOptions.scissors),
-                  child: Image.asset('assets/images/scissors.png', height: 100),
+                JokenPoButton(
+                  imagePath: 'assets/images/scissors.png',
+                  callbackFunction: () =>
+                      _selectedOption(JokenOptions.scissors),
                 ),
               ],
             ),
